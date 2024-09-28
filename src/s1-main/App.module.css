@@ -1,7 +1,7 @@
 .App {
     --header_height: 60px;
     font-family: "Montserrat", sans-serif;
-    padding: 131px 0;
+    padding: 100px 0;
 }
 
 .hw {
@@ -14,5 +14,5 @@
     font-weight: 600;
     font-size: 22px;
     color: #000;
-    margin:0 0 10px 70px;
+    margin: 37px 0 10px 70px;
 }

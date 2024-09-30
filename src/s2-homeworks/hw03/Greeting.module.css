@@ -5,18 +5,33 @@
 }
 
 .error {
+    font-family:  "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #c00;
 }
 
 .input {
+    margin: 9px 0 7px;
+    border: 1px solid #d1d1d1;
+    border-radius: 5px;
+    width: 372px;
+    height: 36px;
 }
 
 .input:focus {
 }
 
 .errorInput {
+    border-color: #c00;
 }
 
 .button {
+    width: 78px;
+    height: 36px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .button:focus {
@@ -29,6 +44,10 @@
 }
 
 .text {
+    font-family:  "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.5);
 }
 
 .greeting {

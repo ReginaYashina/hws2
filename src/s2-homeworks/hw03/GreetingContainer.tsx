@@ -8,16 +8,25 @@ type GreetingContainerPropsType = {
     addUserCallback: (name: string) => void
 }
 
-export const pureAddUser = (name: string, setError: any, setName: any, addUserCallback: any) => {
-    // если имя пустое - показать ошибку, иначе - добавить юзера и очистить инпут
-    setName(name)
-    name === '' ? setError('error!') : addUserCallback(name)
+export const pureAddUser = (name: string, setError: (error: string | null) => void, setName: (name: string) => void, addUserCallback: (name: string) => void) => {
+    if(name.trim() !== ''){
+        addUserCallback(name.trim())
+        setName('')
+    }else {
+        setError('Ошибка! Введите имя!')
+        setName(name)
+    }
+    //
+    // name.trim() === '' ?  setError('Ошибка! Введите имя!') : addUserCallback(name.trim())
+    // setName(name)
 }
 
-export const pureOnBlur = (name: any, setError: any) => { // если имя пустое - показать ошибку
+export const pureOnBlur = (name: string, setError: (error: string | null) => void) => { // если имя пустое - показать ошибку
+    name.trim() === '' &&  setError('Ошибка! Введите имя!')
 }
 
-export const pureOnEnter = (e: any, addUser: any) => { // если нажата кнопка Enter - добавить
+export const pureOnEnter = (e: KeyboardEvent<HTMLInputElement>, addUser: () => void) => { // если нажата кнопка Enter - добавить
+    e.key === 'Enter' && addUser()
 }
 
 // более простой и понятный для новичков
@@ -29,8 +38,8 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
                                                                      addUserCallback,
                                                                  }) => {
     // деструктуризация пропсов
-    const [name, setName] = useState<any>('') // need to fix any
-    const [error, setError] = useState<any>('') // need to fix any
+    const [name, setName] = useState<string>('') // need to fix any
+    const [error, setError] = useState<string | null>('')
 
     const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => { // need to fix any
         setName(e.currentTarget.value) // need to fix

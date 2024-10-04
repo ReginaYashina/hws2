@@ -2,6 +2,8 @@
 }
 
 .inputAndButtonContainer {
+    display: flex;
+    align-items: center;
 }
 
 .error {
@@ -29,9 +31,18 @@
 .button {
     width: 78px;
     height: 36px;
-    display: inline-flex;
+    display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 12px;
+    border-radius: 3px;
+    background: #06c;
+
+    font-family:  "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 143%;
+    color: #fff;
 }
 
 .button:focus {
@@ -41,6 +52,8 @@
 }
 
 .button:disabled {
+    background: #06c;
+    opacity: 0.5;
 }
 
 .text {

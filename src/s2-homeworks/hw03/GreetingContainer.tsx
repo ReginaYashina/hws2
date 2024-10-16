@@ -57,10 +57,8 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
     }
 
     const totalUsers = users.length
-    const lastUserName = name.trim()
-//  tmp
-//     console.log('lastUserName '+ lastUserName)
-//     console.log(users)
+    const lastUserName = users.length> 0 && users[users.length - 1].name
+
     return (
         <Greeting
             name={name}

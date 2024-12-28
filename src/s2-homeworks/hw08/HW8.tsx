@@ -45,7 +45,6 @@ const HW8 = () => {
     const check18 = () => {
         dispatchToPeople(checkAC(18))  // совершеннолетние
         setCurrentSort('18')
-        // sortDown()
     }
 
     return (
